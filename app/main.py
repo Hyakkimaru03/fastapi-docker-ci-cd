@@ -16,6 +16,7 @@ async def root():
 async def say_hello(name: str):
     return {"message": f"Hello {name}"}
 
+
 register_tortoise(
     app,
     db_url=TORTOISE_ORM['connections']['default'],
