@@ -51,9 +51,6 @@ jobs:
           key: ${{ secrets.SERVER_SSH_KEY }}
           script: |
             mkdir -p /home/site/backend
-            git config --global --add safe.directory /home/site/backend
-            cd /home/site/backend
-            git remote set-url origin git@github.com:Hyakkimaru03/fastapi-docker-ci-cd.git
             sudo apt install make -y
 
       - name: Upload project to server
@@ -73,4 +70,6 @@ jobs:
           key: ${{ secrets.SERVER_SSH_KEY }}
           script: |
             cd /home/site/backend
+            git config --global --add safe.directory /home/site/backend
+            git remote set-url origin git@github.com:Hyakkimaru03/fastapi-docker-ci-cd.git
             make init
