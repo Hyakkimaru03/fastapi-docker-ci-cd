@@ -2,7 +2,7 @@ name: CD
 
 on:
   push:
-    branches: [ "CD" ]
+    branches: [ "master" ]
   pull_request:
 
 jobs:
@@ -52,6 +52,8 @@ jobs:
           script: |
             mkdir -p /home/site/backend
             git config --global --add safe.directory /home/site/backend
+            cd /home/site/backend
+            git remote set-url origin git@github.com:Hyakkimaru03/fastapi-docker-ci-cd.git
             sudo apt install make -y
 
       - name: Upload project to server
