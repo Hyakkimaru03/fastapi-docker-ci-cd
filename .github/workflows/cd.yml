@@ -72,4 +72,5 @@ jobs:
             cd /home/site/backend
             git config --global --add safe.directory /home/site/backend
             git remote set-url origin git@github.com:Hyakkimaru03/fastapi-docker-ci-cd.git
+            ssh-keyscan github.com >> ~/.ssh/known_hosts
             make init
